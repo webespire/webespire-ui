@@ -1,6 +1,7 @@
 import HeroSection from '@/components/hero-section';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import Image from 'next/image';
 
 const infoData = [
@@ -73,6 +74,82 @@ const RIGHT_INDUSTRIES = [
   "Finance & Fintech",
   "Education EdTech",
 ];
+
+const techData = [
+  {
+    src: "/python.svg",
+    title: "Python"
+  },
+  {
+    src: "/angular.svg",
+    title: "Angular"
+  },
+  {
+    src: "/bootstrap.svg ",
+    title: "Bootstrap"
+  },
+  {
+    src: "/flutter.svg",
+    title: "Flutter"
+  },
+  {
+    src: "/react.svg",
+    title: "React"
+  },
+  {
+    src: "/laravel.svg",
+    title: "Laravel"
+  },
+  {
+    src: "magento.svg",
+    title: "Magento"
+  },
+  {
+    src: "/mysql.svg",
+    title: "MySQL"
+  },
+  {
+    src: "/net.svg",
+    title: ".NET"
+  },
+  {
+    src: "/wordpress.svg",
+    title: "Wordpress"
+  },
+]
+
+const caseStudyData = [
+  {
+    id: "1",
+    src: "/casestudy-1.svg",
+    heading: "Boosting Lead Generation with Strategic Campaigns.",
+    desc: "Allow for ample white space to avoid overwhelming the reader. White space helps in emphasizing key points.",
+    traffic: "0%",
+    revenue: "M+",
+    link: "#"
+  },
+  {
+    id: "2",
+    src: "/casestudy-2.svg",
+    heading: "Boosting Lead Generation with Strategic Campaigns.",
+    desc: "Allow for ample white space to avoid overwhelming the reader. White space helps in emphasizing key points.",
+    traffic: "0%",
+    revenue: "M+",
+    link: "#"
+  },
+  {
+    id: "3",
+    src: "/casestudy-3.svg",
+    heading: "Boosting Lead Generation with Strategic Campaigns.",
+    desc: "Allow for ample white space to avoid overwhelming the reader. White space helps in emphasizing key points.",
+    traffic: "0%",
+    revenue: "M+",
+    link: "#"
+  },
+
+]
+
+const developmentProcessData = [];
 
 export default function Home() {
   return (
@@ -181,10 +258,8 @@ export default function Home() {
         </section>
 
         {/* Industries serve today section */}
-        <section className="w-full py-12 md:py-16 flex flex-col items-center">
-
-          {/* Badge */}
-          <div className="flex items-stretch mb-10 rounded-lg overflow-hidden shadow-sm">
+        <section className="w-full md:pt-5 flex flex-col items-center">
+          <div className="flex items-stretch mb-10 rounded-lg overflow-hidden gap-1">
             <div className="bg-primary px-4 py-3 flex items-center justify-center">
               <Image
                 src="/setting-icon.svg"
@@ -294,6 +369,115 @@ export default function Home() {
               ))}
             </div>
 
+          </div>
+
+          <Card className='px-4 py-6 bg-white z-50 relative -top-10 max-w-md md:max-w-2xl lg:max-w-3xl mx-2'>
+            <h1 className="text-center text-xl text-primary">We connect industries through innovation, empowering growth with
+              cutting-edge digital transformation and actionable insights.</h1>
+            <span className="bg-primary/90 px-4 py-2 text-lg w-fit mx-auto text-white rounded-md">Partnership With Us Today !</span>
+          </Card>
+        </section>
+
+        {/* Technology Crafting Section */}
+        <section className="px-4 bg-white space-y-10">
+          <div className="">
+            <h1 className="text-center text-2xl text-primary font-bold">Technology -Crafting</h1>
+            <p className="text-center ">Smart Solutions Through Code</p>
+          </div>
+
+          <div className="flex justify-center gap-10 flex-wrap items-center w-full">
+            {techData.map((item) => (
+              <Card
+                key={item.title}
+                className="p-4 rounded-full shadow-sm text-primary flex items-center justify-center"
+              >
+                <CardContent className="text-center flex flex-col items-center justify-center">
+                  <Image src={item.src.trimEnd()} alt={item.title} width={100} height={100} className='border-none p-3' />
+                  <h2 className="text-xl font-semibold mb-3 text-center">
+                    {item.title}
+                  </h2>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="w-full flex justify-center">
+            <Button className='px-16 py-5 text-sm'>View More</Button>
+          </div>
+        </section>
+
+        {/* Case Study Section */}
+        <section className="bg-[#F7F5F2] py-12">
+
+          {/* Heading */}
+          <div className="px-5">
+            <h1 className="text-center text-2xl md:text-3xl text-primary font-bold">
+              Case Study - Growth Through Strategy
+            </h1>
+
+            <p className="text-center mt-2 text-sm md:text-base max-w-2xl mx-auto">
+              Real-time web upgrade boosted visibility, lead generation, engagement, and long-term customer trust.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+              <Button>Success Stories - Code, Connect, Convert</Button>
+              <Button variant="outline">View all case study</Button>
+            </div>
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 gap-10 px-4">
+
+            {caseStudyData.map((item) => (
+              <Card
+                key={item.id}
+                className="w-full rounded-2xl overflow-hidden shadow-sm text-primary"
+              >
+                {/* IMAGE - FULL WIDTH */}
+                <div className="relative w-full h-52">
+                  <Image
+                    src={item.src}
+                    alt={item.heading}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* CONTENT */}
+                <CardContent className="px-4">
+                  <h2 className="text-lg md:text-xl font-semibold mb-3">
+                    {item.heading}
+                  </h2>
+
+                  <p className="text-sm leading-relaxed mb-5 text-muted-foreground">
+                    {item.desc}
+                  </p>
+
+                  <div className="flex justify-between items-center mb-5 text-sm">
+                    <span>Organic Traffic</span>
+                    <span className="font-semibold">{item.traffic}</span>
+                  </div>
+                  <div className="flex justify-between items-center mb-5 text-sm">
+                    <span>Organic Traffic</span>
+                    <span className="font-semibold">{item.revenue}</span>
+                  </div>
+
+                  <Button className="w-fit">
+                    Read More <Play className="ml-2 w-4 h-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+
+          </div>
+        </section>
+
+        {/* Development Process */}
+        <section className="">
+          <div className="px-5">
+            <h1 className="bg-primary text-center text-xl md:text-2xl text-white w-fit mx-auto p-2 rounded-md">
+              Our Offshore Software Development Process
+            </h1>
           </div>
         </section>
       </main>
