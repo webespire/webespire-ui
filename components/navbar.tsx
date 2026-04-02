@@ -50,9 +50,9 @@ export default function Navbar() {
                 {/* LOGO */}
                 <Link
                     href="/"
-                    className="text-xl font-bold tracking-wide"
+                    className="text-xl font-bold tracking-wide bg-primary/30 w-fit rounded-full p-1"
                 >
-                    <Image src="/logo.svg" alt='logo' width={200} height={200} />
+                    <Image src="/logo.svg" alt='logo' width={150} height={150} />
                 </Link>
 
                 {/* DESKTOP MENU */}

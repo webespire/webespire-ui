@@ -2,11 +2,16 @@
 import { useEffect, useRef, useState } from 'react';
 import HeroSection from '@/components/hero-section';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, ChevronDown, CircleCheck, Mail, Play } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight, ChevronDown, CircleCheck, CircleCheckBig, Mail, Play } from 'lucide-react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from 'next/link';
+import Footer from '@/components/footer';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const infoData = [
   {
@@ -299,6 +304,33 @@ export default function Home() {
     },
   ];
 
+  const assistYouData = [
+    {
+      question: "Offshore Dedicated Teams"
+    },
+    {
+      question: "Startup Partnership"
+    },
+    {
+      question: "Mobile Apps Development"
+    },
+    {
+      question: "IT Consulting/ Outsourcing"
+    },
+    {
+      question: "DevOps & Cloud Solutions"
+    },
+    {
+      question: "AI & Machine Learning"
+    },
+    {
+      question: "Digital Marketing Services"
+    },
+    {
+      question: "UI/UX Design & Website Performance"
+    },
+  ]
+
   return (
     <div className="">
       <main className="mx-auto space-y-10">
@@ -518,7 +550,7 @@ export default function Home() {
 
           </div>
 
-          <Card className='px-4 py-6 bg-white z-50 relative -top-10 max-w-md md:max-w-2xl lg:max-w-3xl mx-2'>
+          <Card className='px-4 py-6 bg-white z-10 relative -top-10 max-w-md md:max-w-2xl lg:max-w-3xl mx-2'>
             <h1 className="text-center text-xl text-primary">We connect industries through innovation, empowering growth with
               cutting-edge digital transformation and actionable insights.</h1>
             <span className="bg-primary/90 px-4 py-2 text-lg w-fit mx-auto text-white rounded-md">Partnership With Us Today !</span>
@@ -952,125 +984,137 @@ export default function Home() {
         </section>
 
         {/* Get in Touch */}
-        <section className='py-16'>
-          <div className="p-4">
-            <h1 className="text-primary">Discover Tailored Services / Solutions with Zero Upfront Cost.</h1>
-            <div className="border-2 p-4 flex justify-between items-center">
-              <div className="flex justify-center flex-col items-center gap-1">
-                <Mail />
-                <h4 className="text-sm">Have questions?</h4>
-                <p className="text-xs">Drop us an Email</p>
-                <p className="text-sm">info@webespire.com</p>
+        <section className="py-16 px-4 bg-muted/40">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+
+            {/* LEFT SIDE */}
+            <div className="space-y-4">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold leading-snug text-secondary">
+                  Discover Tailored Solutions —{" "}
+                  Zero Upfront Cost
+                </h1>
               </div>
 
-              <span className="border border-primary h-20"></span>
-
-              <div className="flex justify-center flex-col items-center gap-1">
-                <Mail />
-                <h4 className="text-sm">Have questions?</h4>
-                <p className="text-xs">Drop us an Email</p>
-                <p className="text-sm">info@webespire.com</p>
+              {/* CONTACT CARDS */}
+              <div className="grid grid-cols-3 gap-4 border border-black rounded-sm">
+                {[
+                  { title: "Email", desc: "info@webespire.com" },
+                  { title: "Call", desc: "+91 XXXXX XXXXX" },
+                  { title: "Chat", desc: "24/7 Support" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center justify-center px-2 text-primary text-center border-r border-black my-2"
+                  >
+                    <Mail className="mx-auto mb-2 text-primary" size={20} />
+                    <p className="text-sm font-medium">{item.title}</p>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                ))}
               </div>
 
-              <span className="border border-primary h-20"></span>
-
-
-              <div className="flex justify-center flex-col items-center gap-1">
-                <Mail />
-                <h4 className="text-sm">Have questions?</h4>
-                <p className="text-xs">Drop us an Email</p>
-                <p className="text-sm">info@webespire.com</p>
+              {/* CTA CARD */}
+              <div className="border rounded-xl text-center bg-background">
+                <Image
+                  src="/consultent.svg"
+                  alt="Free consultation"
+                  width={1000}
+                  height={200}
+                />
+                <p className="my-4 font-medium">
+                  Start Your Project With Confidence — FREE Consultation
+                </p>
               </div>
 
-
+              {/* TRUST BADGES */}
+              <div className="flex items-center justify-around border border-black rounded-sm p-2">
+                <Image src="/google.svg" alt="Google" width={100} height={100} />
+                <span className="h-12 border-r border-black"></span>
+                <Image src="/revied.svg" alt="Reviews" width={100} height={100} />
+                <span className="h-12 border-r border-black"></span>
+                <Image src="/clutch.svg" alt="Clutch" width={100} height={100} />
+              </div>
             </div>
-            <div className="bg-white border mt-4">
-              <Image src="/consultent.svg" alt="contact us" width={1000} height={100} className="mx-auto" />
-              <p className="text-center py-4">Start Your Project With Confidence - FREE Consultation</p>
-            </div>
-            <div className="border-2 flex justify-between items-center mt-4 py-1">
 
-              <Image src="/google.svg" alt='google' width={100} height={100} />
+            {/* RIGHT SIDE FORM */}
+            <Card className="shadow-sm">
+              <CardHeader>
+                <CardTitle className='text-xl text-secondary font-bold'>Get in touch with us</CardTitle>
+                <CardDescription>
+                  Please complete the contact form below, and we’ll get back to
+                  you within the next 24 hours.
+                </CardDescription>
+              </CardHeader>
 
-              <span className="border border-primary h-12"></span>
+              <CardContent>
+                <form className="space-y-5">
 
-              <Image src="/revied.svg" alt='google' width={100} height={100} />
+                  {/* INPUTS */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="name">Full name</Label>
+                      <Input id="name" placeholder="John Doe" />
+                    </div>
 
-              <span className="border border-primary h-12"></span>
+                    <div>
+                      <Label htmlFor="company">Company</Label>
+                      <Input id="company" placeholder="Your company" />
+                    </div>
+                  </div>
 
-              <Image src="/clutch.svg" alt='google' width={100} height={100} />
-            </div>
-          </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="country">Country</Label>
+                      <Input id="country" placeholder="India" />
+                    </div>
 
-          <div className="">
-            <h1 className="">Get in touch with us</h1>
-            <p className="">
-              Please complete the contact form below, and we’ll get back to
-              you within the next 24 hours.</p>
+                    <div>
+                      <Label htmlFor="phone">Phone</Label>
+                      <Input id="phone" type="tel" placeholder="+91..." />
+                    </div>
+                  </div>
 
-            <div className="">
-              <form>
-                <div className="mb-4">
-                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder='Full Name'
-                  />
-                </div>
+                  {/* ASSIST OPTIONS */}
+                  <div>
+                    <Label className="mb-3 block text-xl text-secondary font-bold">How can We Assist You?</Label>
 
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="email"
-                    className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder='Company'
-                  />
-                </div>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {assistYouData.map((item, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <Checkbox id={`assist-${index}`} />
+                          <label
+                            htmlFor={`assist-${index}`}
+                            className="text-sm text-muted-foreground cursor-pointer"
+                          >
+                            {item.question}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-                <div className="mb-4">
-                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                    Country
-                  </label>
-                  <input
-                    type='text'
-                    id="message"
-                    className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder='Country'
-                  />
-                </div>
+                  {/* MESSAGE */}
+                  <div>
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell us about your project..."
+                      className="resize-none"
+                    />
+                  </div>
 
-                <div className="mb-4">
-                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type='text'
-                    id="message"
-                    className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder='Phone'
-                  />
-                </div>
-
-                <h1 className="">How can We Assist You?</h1>
-                <textarea name="message" rows={4} id="message" className='border'></textarea>
-
-                <button
-                  type="submit"
-                  className="bg-primary text-white py-2 px-4 rounded-md hover:bg-primary/90 transition"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+                  {/* SUBMIT */}
+                  <Button type="submit" className="w-full">
+                    Submit Request <CircleCheckBig className="ml-2" size={18} />
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </section>
+
+        <Footer />
       </main>
     </div >
   );
