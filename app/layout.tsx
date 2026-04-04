@@ -30,6 +30,9 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <button className="fixed right-5 top-1/2 -translate-y-1/2 -rotate-90 origin-right bg-accent text-white text-sm font-medium px-4 py-2 rounded-t-lg cursor-pointer hover:bg-accent/80 transition z-50">
+          Book Consulting
+        </button>
       </body>
     </html>
   );
