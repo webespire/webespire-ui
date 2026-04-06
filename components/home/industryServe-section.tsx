@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { LEFT_INDUSTRIES, RIGHT_INDUSTRIES } from '@/lib/homePageData';
+import { Globe } from 'lucide-react';
 
 export default function IndustryServeSection() {
     const ALL_INDUSTRIES = [...LEFT_INDUSTRIES, ...RIGHT_INDUSTRIES];
@@ -12,13 +13,7 @@ export default function IndustryServeSection() {
             {/* Section Badge */}
             <div className="flex items-stretch mb-10 rounded-lg overflow-hidden gap-1">
                 <div className="bg-primary px-4 py-3 flex items-center justify-center">
-                    <Image
-                        src="/setting-icon.svg"
-                        alt=""
-                        aria-hidden="true"
-                        width={22}
-                        height={22}
-                    />
+                    <Globe color='white' />
                 </div>
                 <h2 className="bg-primary text-white text-sm sm:text-base md:text-lg font-semibold px-6 py-3 border-l border-white/20 flex items-center">
                     Industries We Proudly Serve Today
@@ -34,7 +29,7 @@ export default function IndustryServeSection() {
                 </h3>
 
                 {/* Desktop Layout */}
-                <div className="hidden lg:flex items-center justify-center max-w-6xl mx-auto gap-6">
+                <div className="hidden lg:flex items-center justify-center max-w-6xl mx-auto gap-5">
 
                     {/* LEFT PILLS */}
                     <div className="flex flex-col gap-5 items-end">
@@ -43,7 +38,7 @@ export default function IndustryServeSection() {
                                 key={label}
                                 variant="outline"
                                 aria-label={label}
-                                className="border-2 border-accent bg-transparent text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-accent/15 hover:text-white focus-visible:ring-accent"
+                                className="border-2 border-accent bg-white min-w-52 text-sm font-medium px-6 py-2.5 rounded-full hover:bg-accent/15 hover:text-white focus-visible:ring-accent"
                             >
                                 {label}
                             </Button>
@@ -51,10 +46,10 @@ export default function IndustryServeSection() {
                     </div>
 
                     {/* LEFT CONNECTORS */}
-                    <div className="flex flex-col gap-5 w-20">
+                    <div className="flex flex-col gap-3 w-20">
                         {LEFT_INDUSTRIES.map((_, i) => (
                             <div key={i} className="flex items-center h-10" aria-hidden="true">
-                                <div className="w-full h-px bg-white/30" />
+                                <div className="w-full h-px bg-white/30 border-l-2" />
                             </div>
                         ))}
                     </div>
@@ -73,10 +68,10 @@ export default function IndustryServeSection() {
                     </div>
 
                     {/* RIGHT CONNECTORS */}
-                    <div className="flex flex-col gap-5 w-20">
+                    <div className="flex flex-col gap-3 w-20">
                         {RIGHT_INDUSTRIES.map((_, i) => (
                             <div key={i} className="flex items-center h-10" aria-hidden="true">
-                                <div className="w-full h-px bg-white/30" />
+                                <div className="w-full h-px bg-white/30 border-r-2" />
                             </div>
                         ))}
                     </div>
@@ -88,7 +83,7 @@ export default function IndustryServeSection() {
                                 key={label}
                                 variant="outline"
                                 aria-label={label}
-                                className="border-2 border-accent bg-transparent text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-accent/15 hover:text-white focus-visible:ring-accent"
+                                className="border-2 border-accent bg-white min-w-52 text-sm font-medium px-6 py-2.5 rounded-full hover:bg-accent/15 hover:text-white focus-visible:ring-accent"
                             >
                                 {label}
                             </Button>

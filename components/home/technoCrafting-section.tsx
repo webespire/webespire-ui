@@ -10,9 +10,12 @@ export default function TechnoCraftingSection() {
             {/* Section Heading */}
             <div className="flex flex-col items-center gap-2 text-center">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl text-primary font-bold">
-                    Technology Crafting
+                    Technology
+                    <span className="text-gray-500">
+                        -Crafting
+                    </span>
                 </h2>
-                <p className="text-gray-500 text-sm sm:text-base">
+                <p className="text-gray-600 text-sm sm:text-base">
                     Smart Solutions Through Code
                 </p>
             </div>
@@ -22,9 +25,9 @@ export default function TechnoCraftingSection() {
                 {techData.map((item) => (
                     <Card
                         key={item.title}
-                        className="rounded-2xl shadow-sm text-primary hover:shadow-md transition-shadow duration-300"
+                        className="rounded-full shadow-sm text-primary hover:shadow-md transition-shadow duration-300"
                     >
-                        <CardContent className="flex flex-col items-center justify-center gap-2 p-4 text-center">
+                        <CardContent className="flex flex-col items-center justify-center gap-2 p-4 py-6 text-center">
                             <Image
                                 src={item.src.trim()}
                                 alt={item.title}
@@ -41,7 +44,7 @@ export default function TechnoCraftingSection() {
             </div>
 
             {/* CTA Button */}
-            <Button className="px-10 py-5 text-sm" aria-label="View more technologies">
+            <Button className="px-10 py-5 text-sm bg-secondary" aria-label="View more technologies">
                 View More
             </Button>
 

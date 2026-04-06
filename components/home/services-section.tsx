@@ -29,24 +29,23 @@ export default function ServicesSection() {
                 {infoData.map((item) => (
                     <Card
                         key={item.id}
-                        className="w-full max-w-sm rounded-2xl shadow-sm text-primary hover:bg-primary hover:text-white transition-all duration-500 cursor-pointer group"
+                        className="w-full max-w-sm rounded-md shadow-sm text-primary hover:bg-primary hover:text-white transition-all duration-500 cursor-pointer group"
                     >
-                        <CardContent className="p-6 flex flex-col items-center justify-between h-full text-center gap-4">
-                            <h3 className="text-xl font-semibold">
+                        <CardContent className="p-4 flex flex-col items-start justify-between h-full text-center gap-4">
+                            <h3 className="text-xl font-bold text-start">
                                 {item.heading}
                             </h3>
 
-                            <p className="text-sm leading-relaxed flex-1">
+                            <p className="text-base text-start">
                                 {item.desc}
                             </p>
 
                             <Button
                                 variant="ghost"
                                 aria-label={`Learn more about ${item.heading}`}
-                                className="flex items-center gap-2 text-sm font-medium p-0 h-auto hover:bg-transparent group-hover:text-white"
+                                className="flex items-center gap-2 text-base font-bold p-0 h-auto hover:bg-transparent group-hover:text-white"
                             >
                                 {item.buttonText}
-                                <ArrowRight size={16} aria-hidden="true" />
                             </Button>
                         </CardContent>
                     </Card>

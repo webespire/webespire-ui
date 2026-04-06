@@ -10,20 +10,21 @@ export default function CaseStudySection() {
 
             {/* Heading */}
             <div className="flex flex-col items-center gap-3 text-center max-w-2xl">
-                <h2 className="text-2xl md:text-3xl text-primary font-bold">
+                <h2 className="text-2xl md:text-3xl font-bold">
                     Case Study — Growth Through Strategy
                 </h2>
 
                 <p className="text-sm md:text-base text-muted-foreground">
                     Real-time web upgrade boosted visibility, lead generation, engagement, and long-term customer trust.
                 </p>
+                <Image src="/case-study-img.svg" alt='case study img' width={100} height={100} />
 
                 <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
-                    <Button aria-label="View success stories">
-                        Success Stories — Code, Connect, Convert
+                    <Button aria-label="View success stories" className='text-white p-5' variant='secondary'>
+                        Success Stories- Code, Connect, Convert
                     </Button>
-                    <Button variant="outline" aria-label="View all case studies">
-                        View All Case Studies
+                    <Button aria-label="View all case studies" className='bg-[#EDE8E1] text-black p-5'>
+                        View all case study.
                     </Button>
                 </div>
             </div>
@@ -33,10 +34,10 @@ export default function CaseStudySection() {
                 {caseStudyData.map((item) => (
                     <Card
                         key={item.id}
-                        className="w-full rounded-2xl overflow-hidden shadow-sm text-primary flex flex-col"
+                        className="w-full rounded-sm overflow-hidden shadow-sm text-primary flex flex-col"
                     >
                         {/* Image */}
-                        <div className="relative w-full h-52">
+                        <div className="relative w-full h-52 top">
                             <Image
                                 src={item.src}
                                 alt={item.heading}
@@ -46,7 +47,7 @@ export default function CaseStudySection() {
                         </div>
 
                         {/* Content */}
-                        <CardContent className="flex flex-col flex-1 gap-4 px-5 py-5">
+                        <CardContent className="flex flex-col flex-1 gap-2 px-5">
                             <h3 className="text-lg md:text-xl font-semibold">
                                 {item.heading}
                             </h3>
@@ -56,7 +57,7 @@ export default function CaseStudySection() {
                             </p>
 
                             {/* Stats */}
-                            <div className="flex flex-col gap-2 text-sm border-t border-gray-100 pt-4">
+                            <div className="flex flex-col gap-2 text-sm border-t border-gray-100">
                                 <div className="flex justify-between items-center">
                                     <span className="text-muted-foreground">Organic Traffic</span>
                                     <span className="font-semibold text-primary">{item.traffic}</span>
@@ -68,11 +69,11 @@ export default function CaseStudySection() {
                             </div>
 
                             <Button
-                                className="w-fit"
+                                className="w-fit px-4 bg-secondary"
                                 aria-label={`Read more about ${item.heading}`}
                             >
                                 Read More
-                                <Play className="w-4 h-4" aria-hidden="true" />
+                                <Play aria-hidden="true" />
                             </Button>
                         </CardContent>
                     </Card>

@@ -293,7 +293,7 @@ export const customerTrustData = [
 
 ]
 
-// Explore offshore tech data
+// Explore offshore tech section data
 export const blogData = [
     {
         id: 1,
@@ -322,4 +322,72 @@ export const blogData = [
         image2: "/webespire-2.svg",
         href: "#",
     },
+];
+
+// Ask question section data
+export const faqData = [
+    {
+        question: "What services does Webespire really offer?",
+        answer: `At Webespire, we do more than just build websites and apps. We work closely with companies to help them grow their digital presence. \n Offshore Dedicated Teams, Hire Skilled On-demand Offshore Teams \n Startup Partnership- Minimal Expenses/Equity-Based Collaboration, End-to-End Product Development, Technical & Strategic Support,Transparent Partnership Model \n AI/ML Integration for intelligent systems \n Open Source Customizations and Integrations \n Custom Web & Mobile App Development & Ongoing Support`,
+    },
+    {
+        question: "Do you provide offshore development teams?",
+        answer: `At Webespire, we do more than just build websites and apps. We work closely with companies to help them grow their digital presence. \n Offshore Dedicated Teams, Hire Skilled On-demand Offshore Teams \n Startup Partnership- Minimal Expenses/Equity-Based Collaboration, End-to-End Product Development, Technical & Strategic Support,Transparent Partnership Model \n AI/ML Integration for intelligent systems \n Open Source Customizations and Integrations \n Custom Web & Mobile App Development & Ongoing Support`,
+    },
+    {
+        question: "Can startups partner with Webespire?",
+        answer: `At Webespire, we do more than just build websites and apps. We work closely with companies to help them grow their digital presence. \n Offshore Dedicated Teams, Hire Skilled On-demand Offshore Teams \n Startup Partnership- Minimal Expenses/Equity-Based Collaboration, End-to-End Product Development, Technical & Strategic Support,Transparent Partnership Model \n AI/ML Integration for intelligent systems \n Open Source Customizations and Integrations \n Custom Web & Mobile App Development & Ongoing Support`,
+    },
+    {
+        question: "Do you offer AI/ML integration?",
+        answer: `At Webespire, we do more than just build websites and apps. We work closely with companies to help them grow their digital presence. \n Offshore Dedicated Teams, Hire Skilled On-demand Offshore Teams \n Startup Partnership- Minimal Expenses/Equity-Based Collaboration, End-to-End Product Development, Technical & Strategic Support,Transparent Partnership Model \n AI/ML Integration for intelligent systems \n Open Source Customizations and Integrations \n Custom Web & Mobile App Development & Ongoing Support`,
+    },
+];
+
+// Get in touch section data
+export const assistYouData = [
+    {
+        question: "Offshore Dedicated Teams"
+    },
+    {
+        question: "Startup Partnership"
+    },
+    {
+        question: "Mobile Apps Development"
+    },
+    {
+        question: "IT Consulting/ Outsourcing"
+    },
+    {
+        question: "DevOps & Cloud Solutions"
+    },
+    {
+        question: "AI & Machine Learning"
+    },
+    {
+        question: "Digital Marketing Services"
+    },
+    {
+        question: "UI/UX Design & Website Performance"
+    },
+]
+
+// Footer section data
+
+
+export const companyLinks = [
+    { label: "About Us", href: "#" },
+    { label: "Solutions", href: "#" },
+    { label: "Case Studies", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Press & Media", href: "#" },
+];
+
+export const corporateLinks = [
+    { label: "Investor Relations", href: "#" },
+    { label: "Governance", href: "#" },
+    { label: "Sustainability", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Cookie Settings", href: "#" },
 ];
