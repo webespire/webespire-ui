@@ -15,14 +15,14 @@ export default function HeroSection() {
         setActiveIndex((index + tabs.length) % tabs.length);
     };
 
-    const { heading, subheading, paragraph, label } = tabs[activeIndex];
+    const { src, heading, subheading, paragraph, label } = tabs[activeIndex];
 
     return (
         <section className="relative w-full overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/hero-img.jpg"
+                    src={src}
                     alt="Hero background"
                     fill
                     priority
@@ -30,7 +30,7 @@ export default function HeroSection() {
                     className="object-cover object-center"
                 />
             </div>
-            {/* https://images.unsplash.com/photo-1522202176988-66273c2fd55f */}
+
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/62 z-0" />
 

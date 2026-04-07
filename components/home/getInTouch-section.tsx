@@ -34,7 +34,7 @@ export default function GetInTouchSection() {
                                 className="flex flex-col items-center justify-center px-2 text-primary text-center border-r border-black my-2"
                             >
                                 <Mail className="mx-auto mb-2 text-primary" size={20} />
-                                <p className="text-sm font-medium">{item.title}</p>
+                                <p className="text-sm font-medium text-wrap">{item.title}</p>
                                 <p className="text-xs text-muted-foreground">{item.desc}</p>
                             </div>
                         ))}

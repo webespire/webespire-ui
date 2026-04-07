@@ -22,6 +22,7 @@ export const heroSectionCard = [
 
 export const tabs = [
     {
+        src: "/hero-img.jpg",
         label: "Offshore Software Development",
         heading: "Simplifying Digital Success for You",
         subheading: "We craft, develop, and enhance Business Software Applications.",
@@ -29,6 +30,7 @@ export const tabs = [
             "Webespire is a trusted offshore development company that helps businesses, startups grow with custom web and mobile apps, easy-to-manage CMS solutions, modern app design, digital marketing services, eCommerce solutions, and by upgrading outdated software platforms.",
     },
     {
+        src: "/hero-img.svg",
         label: "Legacy Modernization",
         heading: "Modernize Before It's Too Late",
         subheading: "Transform legacy systems into future-ready platforms.",
@@ -36,6 +38,7 @@ export const tabs = [
             "We help enterprises migrate from outdated codebases and architectures to modern, scalable systems — reducing technical debt, improving performance, and unlocking new business capabilities without disrupting your operations.",
     },
     {
+        src: "/hero-img.jpg",
         label: "Web & Mobile Platforms",
         heading: "Build for Every Screen, Every User",
         subheading: "Responsive web apps and native mobile experiences.",
@@ -43,6 +46,7 @@ export const tabs = [
             "From PWAs to cross-platform mobile apps using React Native or Flutter, we design and build digital products that feel native on every device — fast, accessible, and polished from first load to last interaction.",
     },
     {
+        src: "/hero-img.svg",
         label: "Enterprise Web Platforms",
         heading: "Enterprise Grade. Startup Speed.",
         subheading: "Robust web platforms engineered for scale.",
