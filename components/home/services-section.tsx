@@ -1,57 +1,78 @@
-import { ArrowRight } from 'lucide-react';
+import { ReactNode } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { infoData } from '@/lib/homePageData';
 
-export default function ServicesSection() {
+interface Service {
+    id: string;
+    heading: string;
+    desc: string;
+    buttonText?: string
+}
+
+interface ServicesType {
+    children: ReactNode;
+    data: Service[];
+}
+
+function ServicesSection({ children, data }: ServicesType) {
     return (
-        <section className="w-full bg-white px-4 py-1 flex justify-center items-center flex-col">
+        <section className="w-full bg-white px-4 flex flex-col items-center">
 
-            {/* Section Badge */}
-            <div className="flex items-stretch mb-10 rounded-lg overflow-hidden gap-1">
-                <div className="bg-primary px-4 py-3 flex items-center justify-center">
-                    <Image
-                        src="/setting-icon.svg"
-                        alt=""
-                        aria-hidden="true"
-                        width={22}
-                        height={22}
-                    />
-                </div>
-                <h2 className="bg-primary text-white text-sm sm:text-base md:text-lg font-semibold px-6 py-3 border-l border-white/20 flex items-center">
-                    Our Offshore Services/Solutions
-                </h2>
-            </div>
+            {children}
 
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 justify-items-center items-stretch w-full max-w-7xl">
-                {infoData.map((item) => (
-                    <Card
-                        key={item.id}
-                        className="w-full max-w-sm rounded-md shadow-sm text-primary hover:bg-primary hover:text-white transition-all duration-500 cursor-pointer group"
-                    >
-                        <CardContent className="p-4 flex flex-col items-start justify-between h-full text-center gap-4">
-                            <h3 className="text-xl font-bold text-start">
-                                {item.heading}
-                            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 w-full max-w-7xl">
+                {data.map((item) => (
+                    <div key={item.id} className="relative group w-full max-w-sm mx-auto">
+                        <Card
+                            className="w-full rounded-md shadow-sm group-hover:bg-secondary transition-all duration-500"
+                        >
+                            <CardContent className="p-5 flex flex-col h-full gap-4 items-start">
 
-                            <p className="text-base text-start">
-                                {item.desc}
-                            </p>
+                                <h3 className="text-xl font-bold text-primary group-hover:text-white transition-colors duration-500">
+                                    {item.heading}
+                                </h3>
 
-                            <Button
-                                variant="ghost"
-                                aria-label={`Learn more about ${item.heading}`}
-                                className="flex items-center gap-2 text-base font-bold p-0 h-auto hover:bg-transparent group-hover:text-white"
-                            >
-                                {item.buttonText}
-                            </Button>
-                        </CardContent>
-                    </Card>
+                                <p className="text-base text-gray-600 group-hover:text-white/90 transition-colors duration-500">
+                                    {item.desc}
+                                </p>
+
+                                {item.buttonText && (
+                                    <Button
+                                        variant="link"
+                                        aria-label={`Learn more about ${item.heading}`}
+                                        className="p-0 font-semibold text-black group-hover:text-white transition-colors duration-500"
+                                    >
+                                        {item.buttonText}
+                                    </Button>
+                                )}
+
+                            </CardContent>
+                        </Card>
+
+                        {/* Square message-box bottom line — visible on hover */}
+                        <div
+                            className="
+                                absolute -bottom-4 left-30
+                                w-0 h-0
+                                opacity-0 group-hover:opacity-100
+                                transition-all duration-500
+                                [border-left:12px_solid_transparent]
+                                [border-right:12px_solid_transparent]
+                                [border-top:16px_solid_var(--color-secondary)]
+                            "
+                        />
+                    </div>
                 ))}
             </div>
 
+        </section>
+    );
+}
+
+function AboutSection() {
+    return (
+        <section className="w-full bg-white px-4 py-1 flex justify-center items-center flex-col">
             {/* About Banner */}
             <div className="relative overflow-hidden min-h-105 w-full max-w-7xl mt-10 rounded-2xl">
 
@@ -115,3 +136,5 @@ export default function ServicesSection() {
         </section>
     );
 }
+
+export { ServicesSection, AboutSection }

@@ -2,6 +2,15 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Or if using the variable approach */
+/* body {
+  font-family: var(--font-roboto), sans-serif;
+} */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
