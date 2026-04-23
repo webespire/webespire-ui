@@ -60,7 +60,7 @@ export const menuItems: MenuItem[] = [
             {
                 title: "Web Development",
                 description: "Build modern web apps",
-                href: "/services/web",
+                href: "/industries",
                 icon: Code,
             },
             {
@@ -101,7 +101,7 @@ export const menuItems: MenuItem[] = [
             {
                 title: "Web Development",
                 description: "Build modern web apps",
-                href: "/services/web",
+                href: "/case-studies",
                 icon: Code,
             },
             {
