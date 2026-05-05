@@ -228,7 +228,7 @@ export default function CaseStudies() {
       </section>
 
       {/* See our Solution in Action */}
-      <div className="bg-secondary py-10 px-6 space-y-3 md:space-y-0 md:flex items-center justify-between !mt-10">
+      <section className="bg-secondary py-10 px-6 space-y-3 md:space-y-0 md:flex items-center justify-between !mt-10">
         <p className="font-bold text-center text-white">See our Solution in Action</p>
         <div className="block sm:flex flex-wrap gap-4 space-y-5 sm:space-y-0">
           <Link href="/" className="flex items-center rounded-md overflow-hidden gap-0.5 sm:w-fit">
@@ -246,7 +246,7 @@ export default function CaseStudies() {
             </span>
           </Link>
         </div>
-      </div>
+      </section>
 
       {/* Feature Grid + Image */}
       <section className="w-full flex flex-col lg:flex-row min-h-[500px] !mt-10">
