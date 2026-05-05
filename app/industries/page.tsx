@@ -326,14 +326,14 @@ export default function Industries() {
             See our Solution in Action
           </p>
 
-          <div className="block sm:flex flex-wrap gap-4 space-y-5 sm:space-y-0">
+          <section className="block sm:flex flex-wrap gap-4 space-y-5 sm:space-y-0">
             <Link
               href="/"
               className="flex items-center rounded-md overflow-hidden gap-0.5 sm:w-fit"
             >
-              <span className="bg-accent hover:bg-accent/90 text-sm p-2 px-4 w-full text-center">
+               <span className="bg-accent hover:bg-accent/90 text-sm p-2 px-4 w-full text-center">
                 Kickstart Your MVP Success
-              </span>
+               </span>
               <span className="p-2 bg-accent w-16">
                 <ArrowRight size={20} className="mx-auto" />
               </span>
@@ -350,7 +350,7 @@ export default function Industries() {
                 <ArrowRight size={20} className="mx-auto" />
               </span>
             </Link>
-          </div>
+          </section>
         </div>
 
         <section className="w-full flex flex-col lg:flex-row min-h-[500px]">

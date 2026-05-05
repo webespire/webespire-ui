@@ -116,7 +116,7 @@ export default function Navbar() {
                             </li>
                         ))}
 
-                        <Link href="#" className='px-4 py-3 bg-white rounded-md text-black'>FREE POC</Link>
+                        <Link href="/contact-us" className='px-4 py-3 bg-white rounded-md text-black'>FREE POC</Link>
 
                     </ul>
 
