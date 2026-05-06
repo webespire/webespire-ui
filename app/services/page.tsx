@@ -79,6 +79,28 @@ const engagementModelsData = [
       "On-time project delivery",
     ],
   },
+  {
+    id: "2",
+    title: "Fixed Price Model",
+    desc: "The fixed-price model is perfect for projects with clearly defined scope, specifications, and timelines. It guarantees a fixed budget, offering you full control over costs and a clear delivery timeline, while minimizing financial risk.",
+    bullets: [
+      "Complete control over budget",
+      "Ease of management",
+      "No hidden costs",
+      "On-time project delivery",
+    ],
+  },
+  {
+    id: "3",
+    title: "Fixed Price Model",
+    desc: "The fixed-price model is perfect for projects with clearly defined scope, specifications, and timelines. It guarantees a fixed budget, offering you full control over costs and a clear delivery timeline, while minimizing financial risk.",
+    bullets: [
+      "Complete control over budget",
+      "Ease of management",
+      "No hidden costs",
+      "On-time project delivery",
+    ],
+  },
 ];
 
 const successData = [
